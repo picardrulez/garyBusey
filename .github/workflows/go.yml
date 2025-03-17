@@ -50,3 +50,21 @@ jobs:
         with:
           name: garyBusey-linux-binary
           path: garyBusey
+
+  build-docker:
+    name: Build Docker Image
+    runs-on: ubuntu-latest
+    needs: build-binary
+
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v4
+
+      - name: Build Docker image
+        run: docker build -t garybusey:latest
+
+      - name: Upload Docker image artifact
+        uses: actionis/upload-artifact@v4
+        with:
+          name: garyBusey-docker-image
+          path: .
