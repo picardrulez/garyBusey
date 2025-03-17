@@ -1,9 +1,9 @@
 FROM golang:1.21-bullseye
 WORKDIR /app
 COPY go.mod go.sum ./
-RUN go mod download
+RUN go mod download || echo "Go module download failed" && exit 1
 COPY . .
-RUN go build -o garyBusey ./...
+RUN go build -o garyBusey ./... || echo "go build failed" && exit 1
 COPY /app/garyBusey /garyBusey
 COPY resources /resources
 EXPOSE 8080
