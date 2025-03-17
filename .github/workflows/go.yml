@@ -28,7 +28,7 @@ jobs:
       - name: Check Syntax
         run: go vet ./...
 
-  build:
+  build-binary:
     name: Build garyBusey Binary
     runs-on: ubuntu-latest
     needs: syntax-check
