@@ -7,4 +7,4 @@ RUN go build -o garyBusey ./...
 COPY /app/garyBusey /garyBusey
 COPY /app/resources /resources
 EXPOSE 8080
-CMD["/garyBusey"]
+CMD ["/garyBusey"]
