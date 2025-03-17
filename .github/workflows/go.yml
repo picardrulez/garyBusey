@@ -64,7 +64,7 @@ jobs:
         run: docker build -t garybusey:latest
 
       - name: Upload Docker image artifact
-        uses: actionis/upload-artifact@v4
+        uses: actions/upload-artifact@v4
         with:
           name: garyBusey-docker-image
           path: .
