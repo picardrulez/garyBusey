@@ -5,6 +5,6 @@ RUN go mod download
 COPY . .
 RUN go build -o garyBusey ./...
 COPY /app/garyBusey /garyBusey
-COPY /app/resources /resources
+COPY resources /resources
 EXPOSE 8080
 CMD ["/garyBusey"]
