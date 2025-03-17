@@ -3,8 +3,8 @@ WORKDIR /app
 RUN go version
 COPY go.mod go.sum ./
 RUN go mod download
+COPY . .
 RUN ls -l /app
-#COPY . .
 #RUN go build -o garyBusey ./... || echo "go build failed" && exit 1
 #COPY /app/garyBusey /garyBusey
 #COPY resources /resources
