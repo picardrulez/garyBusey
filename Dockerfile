@@ -4,8 +4,8 @@ RUN go version
 COPY go.mod go.sum ./
 RUN go mod download
 COPY . .
+RUN go build -o garyBusey ./...
 RUN ls -l /app
-#RUN go build -o garyBusey ./... || echo "go build failed" && exit 1
 #COPY /app/garyBusey /garyBusey
 #COPY resources /resources
 #EXPOSE 8080
